@@ -6,8 +6,8 @@ import java.util.Calendar
 
 fun createApiParams(): ApiParams {
     val timeInMillis = Calendar.getInstance().timeInMillis.toString()
-    val privateKey = "PRIVATE_KEY"
-    val publicKey = "PUBLIC_KEY"
+    val privateKey = PRIVATE_KEY
+    val publicKey = PUBLIC_KEY
 
     return ApiParams(
         ts = timeInMillis,

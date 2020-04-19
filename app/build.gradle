@@ -17,8 +17,15 @@ android {
     }
     buildTypes {
         release {
+            debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+        }
+        buildTypes.each {
+            it.buildConfigField 'string', 'BASE_URL', "https://gateway.marvel.com/"
         }
     }
 }
