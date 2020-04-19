@@ -24,6 +24,14 @@ android {
 }
 
 dependencies {
+
+    // Retrofit Http client
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    // Gson - Json converter
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+    // OkHttp
+    implementation "com.squareup.okhttp3:okhttp:$okhttp"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
