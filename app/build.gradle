@@ -1,7 +1,5 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -34,12 +32,20 @@ dependencies {
 
     // Retrofit Http client
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    // Google GSON
+    implementation "com.google.code.gson:gson:$gson"
     // Gson - Json converter
     implementation "com.squareup.retrofit2:converter-gson:$retrofit"
     // OkHttp
     implementation "com.squareup.okhttp3:okhttp:$okhttp"
     //DigestUtil - md5 hash converter
     implementation "cc.duduhuo.util:digest-util:$digestUtil"
+    // Koin
+    implementation "org.koin:koin-core:$koin_version"
+    implementation "org.koin:koin-android-viewmodel:$koin_version"
+    // AndroidX Support Libs
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

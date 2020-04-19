@@ -18,6 +18,5 @@ class RetrofitConfig {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    fun service(): HeroesService = retrofit.create<HeroesService>(
-        HeroesService::class.java)
+    fun service(): HeroesService = retrofit.create<HeroesService>(HeroesService::class.java)
 }

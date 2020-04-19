@@ -5,6 +5,9 @@ buildscript {
     ext.retrofit = '2.6.2'
     ext.okhttp = '4.5.0'
     ext.digestUtil = '1.1.1'
+    ext.koin_version = '2.0.1'
+    ext.lifecycle_version = '2.2.0'
+    ext.gson = '2.8.6'
 
     repositories {
         google()
@@ -23,7 +26,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+        maven { url "https://jitpack.io" }
     }
 }
 
