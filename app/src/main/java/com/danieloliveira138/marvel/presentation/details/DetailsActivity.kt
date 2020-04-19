@@ -1,10 +1,10 @@
-package com.danieloliveira138.marvel.presentation
+package com.danieloliveira138.marvel.presentation.details
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.danieloliveira138.marvel.R
+import com.danieloliveira138.marvel.presentation.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class DetailsActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -12,6 +12,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_details)
     }
 }

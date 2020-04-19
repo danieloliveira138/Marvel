@@ -1,6 +1,6 @@
 package com.danieloliveira138.marvel.model
 
-data class MarvelApiResponse(
+data class MarvelResponse(
     val `data`: Data = Data(),
     val attributionHTML: String = "",
     val attributionText: String = "",
