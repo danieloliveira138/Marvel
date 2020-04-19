@@ -9,7 +9,7 @@ interface HeroesService {
 
     @GET("/v1/public/characters")
     suspend fun getCharacters(
-        @Query("ts") ts: String,
+        @Query("timeStamp") ts: String,
         @Query("apikey") apiKey: String,
         @Query("hash") hash: String,
         @Query("orderBy") order: String? = "",

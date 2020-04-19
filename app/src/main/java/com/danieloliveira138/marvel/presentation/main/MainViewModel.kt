@@ -15,9 +15,13 @@ class MainViewModel(
         scope.launch {
             val response = repository.getHeroes(0)
 
-            if (response.status == Status.SUCCESS) {
-                val results = response.data
-                Log.d("CATRA","$results")
+            when (response.status) {
+                Status.SUCCESS -> {
+                    Log.d("CATRA","${response.data}")
+                }
+                Status.ERROR -> {
+                    Log.d("CATRA ERROR", "${response.message}\t${response.exception}")
+                }
             }
         }
     }
