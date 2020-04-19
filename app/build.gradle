@@ -31,6 +31,8 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit"
     // OkHttp
     implementation "com.squareup.okhttp3:okhttp:$okhttp"
+    //DigestUtil - md5 hash converter
+    implementation "cc.duduhuo.util:digest-util:$digestUtil"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
