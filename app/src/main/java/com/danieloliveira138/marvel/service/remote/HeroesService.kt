@@ -9,7 +9,7 @@ interface HeroesService {
 
     @GET("/v1/public/characters")
     suspend fun getCharacters(
-        @Query("timeStamp") ts: String,
+        @Query("ts") ts: String,
         @Query("apikey") apiKey: String,
         @Query("hash") hash: String,
         @Query("orderBy") order: String? = "",
@@ -20,7 +20,7 @@ interface HeroesService {
     @GET("/v1/public/characters/{characterId}")
     suspend fun getCharacter(
         @Path("characterId") characterId: String,
-        @Query("timeStamp") ts: String,
+        @Query("ts") ts: String,
         @Query("apikey") apiKey: String,
         @Query("hash") hash: String
     ): MarvelResponse

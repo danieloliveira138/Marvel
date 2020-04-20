@@ -10,7 +10,7 @@ fun createApiParams(): ApiParams {
     val publicKey = PUBLIC_KEY
 
     return ApiParams(
-        timeStamp = timeInMillis,
+        ts = timeInMillis,
         apiKey = publicKey,
         md5Hash = Digest.md5Hex("$timeInMillis$privateKey$publicKey")
     )
