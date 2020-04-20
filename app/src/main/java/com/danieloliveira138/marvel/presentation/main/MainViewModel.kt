@@ -20,7 +20,7 @@ class MainViewModel(
                     Log.d("CATRA","${response.data}")
                 }
                 Status.ERROR -> {
-                    Log.d("CATRA ERROR", "${response.message}\t${response.exception}")
+                    Log.d("CATRA ERROR", "\n${response.message}\n${response.exception}")
                 }
             }
         }
