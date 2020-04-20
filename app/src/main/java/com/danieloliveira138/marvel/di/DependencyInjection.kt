@@ -2,6 +2,7 @@ package com.danieloliveira138.marvel.di
 
 import com.danieloliveira138.marvel.presentation.details.DetailsViewModel
 import com.danieloliveira138.marvel.presentation.main.MainViewModel
+import com.danieloliveira138.marvel.presentation.main.heroslist.HeroesAdapter
 import com.danieloliveira138.marvel.service.Repository
 import com.danieloliveira138.marvel.service.RepositoryImpl
 import com.danieloliveira138.marvel.service.remote.RetrofitConfig
@@ -21,6 +22,9 @@ val appModule: Module = module {
 
     single { HeroUseCase(get()) }
 
+    factory { (listener: (Int) -> Unit) ->
+        HeroesAdapter(listener)
+    }
 }
 
 val viewModelModule: Module = module {

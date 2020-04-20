@@ -48,6 +48,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     // Timber - Logs
     implementation "com.jakewharton.timber:timber:$timber_version"
+    // RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

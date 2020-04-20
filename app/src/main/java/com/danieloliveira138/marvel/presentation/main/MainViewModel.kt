@@ -1,7 +1,10 @@
 package com.danieloliveira138.marvel.presentation.main
 
 import android.content.Context
+import androidx.lifecycle.MutableLiveData
+import com.danieloliveira138.marvel.extensions.toResultList
 import com.danieloliveira138.marvel.model.Request
+import com.danieloliveira138.marvel.model.Result
 import com.danieloliveira138.marvel.model.Status.SUCCESS
 import com.danieloliveira138.marvel.model.Status.ERROR
 import com.danieloliveira138.marvel.presentation.BaseViewModel
@@ -14,13 +17,16 @@ class MainViewModel(
     private val heroesUseCase: HeroesUseCase
 ) : BaseViewModel(context) {
 
+    val heroes: MutableLiveData<List<Result>> = MutableLiveData()
+
     fun fetchData() {
         scope.launch {
             val response = heroesUseCase.execute(Request(offset = 0))
 
             when (response.status) {
                 SUCCESS -> {
-                    Timber.d("CATRA\n${response.data}")
+                    Timber.d("CATRA\n${response.toResultList()}")
+                    heroes.postValue(response.toResultList())
                 }
                 ERROR -> {
                     Timber.d("CATRA ERROR\n${response.message}\n${response.exception}")
