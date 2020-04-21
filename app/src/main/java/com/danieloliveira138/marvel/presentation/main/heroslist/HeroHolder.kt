@@ -3,6 +3,7 @@ package com.danieloliveira138.marvel.presentation.main.heroslist
 import android.view.View
 import android.view.ViewGroup
 import com.danieloliveira138.marvel.R
+import com.danieloliveira138.marvel.extensions.load
 import com.danieloliveira138.marvel.extensions.inflate
 import com.danieloliveira138.marvel.model.Result
 import com.danieloliveira138.marvel.presentation.BaseHolder
@@ -15,6 +16,7 @@ class HeroHolder(
     override fun bind(hero: Result, listener: (Int) -> Unit) {
         with(itemView) {
             title.text = hero.name
+            image.load(hero.thumbnail)
             setOnClickListener { listener.invoke(hero.id) }
         }
 
