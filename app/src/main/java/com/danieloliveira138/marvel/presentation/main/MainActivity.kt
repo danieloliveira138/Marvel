@@ -1,17 +1,18 @@
 package com.danieloliveira138.marvel.presentation.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.danieloliveira138.marvel.R
 import com.danieloliveira138.marvel.components.OnScrollListenerDelegate
 import com.danieloliveira138.marvel.model.Result
 import com.danieloliveira138.marvel.presentation.BaseActivity
+import com.danieloliveira138.marvel.presentation.details.DetailsActivity
 import com.danieloliveira138.marvel.presentation.main.heroslist.HeroesAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
-import timber.log.Timber
 
 class MainActivity : BaseActivity() {
 
@@ -50,7 +51,11 @@ class MainActivity : BaseActivity() {
         adapter.heroes = heroes.toMutableList()
     }
 
-    private fun listener(id: Int) {
-        Timber.d("CATRA")
+    private fun listener(id: Int = 0) {
+        with (Intent(this, DetailsActivity::class.java)) {
+            putExtra("hero", id)
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(this)
+        }
     }
 }
