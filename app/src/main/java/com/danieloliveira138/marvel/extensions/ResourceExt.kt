@@ -4,9 +4,9 @@ import com.danieloliveira138.marvel.model.MarvelResponse
 import com.danieloliveira138.marvel.model.Resource
 import com.danieloliveira138.marvel.model.Result
 
-fun Resource<MarvelResponse>.toResultList(): List<Result>? {
+fun Resource<MarvelResponse>.toResultList(): MutableList<Result>? {
     this.data?.data?.results?.let {
-        if (it.isNotEmpty()) return it
+        if (it.isNotEmpty()) return it as MutableList
     }
     return null
 }

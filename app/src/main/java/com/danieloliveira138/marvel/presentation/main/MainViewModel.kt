@@ -17,11 +17,11 @@ class MainViewModel(
     private val heroesUseCase: HeroesUseCase
 ) : BaseViewModel(context) {
 
-    val heroes: MutableLiveData<List<Result>> = MutableLiveData()
+    val heroes: MutableLiveData<MutableList<Result>> = MutableLiveData()
 
-    fun fetchData() {
+    fun fetchData(offset: Int = 0) {
         scope.launch {
-            val response = heroesUseCase.execute(Request(offset = 0))
+            val response = heroesUseCase.execute(Request(offset = offset))
 
             when (response.status) {
                 SUCCESS -> {

@@ -5,7 +5,11 @@ import com.danieloliveira138.marvel.model.Resource
 
 interface Repository {
 
-    suspend fun getHeroes(offset: Int, searchQuery: String = ""): Resource<MarvelResponse>
+    suspend fun getHeroes(
+        offset: Int,
+        limit: Int,
+        searchQuery: String = ""
+    ): Resource<MarvelResponse>
 
     suspend fun getHero(characterId: String): Resource<MarvelResponse>
 }

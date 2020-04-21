@@ -10,8 +10,9 @@ class HeroesAdapter(
 
     var heroes: MutableList<Result> = mutableListOf()
         set(value) {
+            val oldSize = heroes.size
             heroes.addAll(value)
-            notifyDataSetChanged()
+            notifyItemMoved(oldSize, heroes.size)
         }
 
     override fun onBindViewHolder(holder: HeroHolder, position: Int) {

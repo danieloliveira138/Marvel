@@ -13,7 +13,11 @@ class RepositoryImpl(
 
     private val handlerResponse: ResponseHandler = ResponseHandler()
 
-    override suspend fun getHeroes(offset: Int, searchQuery: String): Resource<MarvelResponse> {
+    override suspend fun getHeroes(
+        offset: Int,
+        limit: Int,
+        searchQuery: String
+    ): Resource<MarvelResponse> {
         return try {
             handlerResponse.handleSuccess(
                 with(createApiParams()) {
@@ -22,7 +26,7 @@ class RepositoryImpl(
                         this.apiKey,
                         this.md5Hash,
                         searchQuery,
-                        10,
+                        limit,
                         offset
                     )
                 }
